@@ -25,7 +25,7 @@ app.get('/models', async (req, res) => {
   }
 });
 
-app.post('/chat', async (req, res) => {
+app.post('/hf/chat', async (req, res) => {
   const { history, message, patientSetting } = req.body;
 
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -59,7 +59,7 @@ app.post('/chat', async (req, res) => {
 });
 
 // 評価エンドポイント
-app.post('/evaluate', async (req, res) => {
+app.post('/hf/evaluate', async (req, res) => {
   const { history, patientSetting } = req.body;
 
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
