@@ -36,7 +36,7 @@ app.post('/chat', async (req, res) => {
       parts: [{ text: msg.parts[0].text }]
     })),
     generationConfig: {
-      maxOutputTokens: 500,
+      maxOutputTokens: 200,
     },
   });
 
