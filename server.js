@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({ origin: 'https://heart-failure-simulator-frontend-amachantaros-projects.vercel.app' }));
 const PORT = process.env.PORT || 5001;
 
 app.use(express.json());
