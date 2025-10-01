@@ -28,7 +28,7 @@ app.get('/models', async (req, res) => {
 app.post('/hf/chat', async (req, res) => {
   const { history, message, patientSetting } = req.body;
 
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const chat = model.startChat({
     history: history.map(msg => ({
@@ -62,7 +62,7 @@ app.post('/hf/chat', async (req, res) => {
 app.post('/hf/evaluate', async (req, res) => {
   const { history, patientSetting } = req.body;
 
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const historyText = history.map(msg => {
     const role = msg.role === 'user' ? '看護師' : '患者';
